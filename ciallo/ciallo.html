@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yuzu~yuzu</title>
+    <link rel="shortcut icon" href="ciallo.ico" />
+    <style>
+        .center {
+            width: 540px;
+            height: 120px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        #settings-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        #audio-selector {
+            display: none;
+            position: fixed;
+            bottom: 60px;
+            left: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <marquee behavior="scroll" direction="left" scrollamount="30"><font color="red" size="15px">Ciallo～(∠・ω< )⌒★ </font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="15"><font color="aqua" size="11px">0721</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="25"><font>请收下我的**！</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="12"><font color="coral" size="10px">杂鱼~❤ 杂鱼~❤</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="28"><font color="red"></font>狗修金ん~~</marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="20"><font color="greenyellow" size="13px">Ciallo～(∠・ω< )⌒☆</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="10"><font size="16px">Ciallo～(∠・ω< )⌒★</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="15"><font color="pink" size="20px">0721</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="11"><font color="aqua" size="6px">请收下我的**！</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="28"><font color="red">杂鱼~❤ 杂鱼~❤</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="8"><font color="greenyellow" size="10px">狗修金ん~~</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="20"><font color="pink" size="9px">Ciallo～(∠・ω< )⌒☆</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="13"><font color="green" size="5px">Ciallo～(∠・ω< )⌒☆</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="17"><font color="blue" size="5px">狗修金ん~~</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="16"><font color="yellow" size="7px">Ciallo～(∠・ω< )⌒★</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="11"><font color="red" size="5px">杂鱼~❤ 杂鱼~❤</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="10"><font color="orange" size="8px">Ciallo～(∠・ω< )⌒☆</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="20"><font color="gray" size="9px">Ciallo～(∠・ω< )⌒★</font></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="15"><font color="pink" size="20px">Pantsumeow~</font></marquee>
+    </div>
+    <div id="main" class="center">
+        <img src="ciallo.gif">
+    </div>
+
+    <div id="settings-btn">设置</div>
+    <div id="audio-selector">
+        <label for="audio-files">选择音频:</label>
+        <select id="audio-files">
+            <option value="default">顺序播放</option>
+            <option value="ciallo.aac">Ciallo</option>
+            <option value="0721.aac">0721</option>
+            <option value="zhencao.aac">请收下我的**！</option>
+            <option value="zaku.aac">杂鱼~</option>
+            <option value="dogDevelopGolden.aac">狗修金~</option>
+        </select>
+        <button id="set-audio">确认选择</button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+<script type="text/javascript">
+    let ac = new AudioContext();
+    let currentAudio = 'ciallo.aac'; // 默认音频
+    let audioQueue = []; // 音频队列
+    let audioIndex = 0; // 当前播放音频索引
+
+    window.onload = function() {
+        load_sound(currentAudio);
+        console.log("播放成功");
+    }
+
+    $(function () {
+        $("body").click(function(e) {
+            if ($('#audio-files').val() === 'default') {
+                if (audioQueue.length === 0) {
+                    audioQueue = ['ciallo.aac', '0721.aac', 'zhencao.aac', 'zaku.aac', 'dogDevelopGolden.aac']; // 默认音频队列
+                }
+                // 播放当前索引音频
+                load_sound(audioQueue[audioIndex]);
+                
+                const a = new Array("Ciallo～(∠・ω< )⌒★", "0721", "请收下我的（）（）！", "杂鱼~❤ 杂鱼~❤", "狗修金ん~~");
+                const a_idx = audioIndex; // 更新动画文本索引
+                const $i = $("<span/>").text(a[a_idx]);
+                const x = e.pageX,
+                    y = e.pageY;
+                $i.css({
+                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-weight": "bold",
+                    "color": color16()
+                });
+                $("body").append($i);
+                $i.animate({
+                        "top": y - 180,
+                        "opacity": 0
+                    },
+                    1500,
+                    function() {
+                        $i.remove();
+                    });
+
+                audioIndex = (audioIndex + 1) % audioQueue.length; // 更新索引
+            } else {
+                load_sound(currentAudio);
+                const a = {
+                    "ciallo.aac": "Ciallo～(∠・ω< )⌒★",
+                    "0721.aac": "0721",
+                    "zhencao.aac": "请收下我的（）（）！",
+                    "zaku.aac": "杂鱼~❤ 杂鱼~❤",
+                    "dogDevelopGolden.aac": "狗修金ん~~"
+                }[currentAudio];
+                
+                const $i = $("<span/>").text(a);
+                const x = e.pageX,
+                    y = e.pageY;
+                $i.css({
+                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-weight": "bold",
+                    "color": color16()
+                });
+                $("body").append($i);
+                $i.animate({
+                        "top": y - 180,
+                        "opacity": 0
+                    },
+                    1500,
+                    function() {
+                        $i.remove();
+                    });
+            }
+        });
+
+
+        $('#settings-btn').click(function() {
+            $('#audio-selector').toggle();
+        });
+
+        $('#set-audio').click(function() {
+            currentAudio = $('#audio-files').val() === 'default' ? 'ciallo.aac' : $('#audio-files').val(); // 更新当前音频
+            audioQueue = [];
+            audioIndex = 0;
+            $('#audio-selector').hide();
+        });
+    });
+
+    function color16(){
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+    }
+
+    function load_sound(url_data) {
+        const req = new XMLHttpRequest();
+        req.open('GET', url_data, true);
+        req.responseType = 'arraybuffer';
+        req.onload = function() {
+            ac.decodeAudioData(req.response, function(buffer) {
+                const source = ac.createBufferSource();
+                source.buffer = buffer;
+                source.connect(ac.destination);
+                source.start(0);
+            }, function (e) {
+                console.info('错误');
+            });
+        }
+        req.send();
+    }
+</script>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        // 创建版权信息的 div 容器
+        const creditsDiv = document.createElement("div");
+        creditsDiv.className = "credits";
+        creditsDiv.style.position = "fixed";
+        creditsDiv.style.bottom = "5px";
+        creditsDiv.style.right = "5px";
+        creditsDiv.style.width = "100%";
+        creditsDiv.style.textAlign = "center";
+        creditsDiv.style.fontSize = "12px";
+        creditsDiv.style.color = "#666";
+
+
+        const currentYear = new Date().getFullYear();
+        creditsDiv.innerHTML = `Copyright © 2024 - ${currentYear} <a href="http://blog.pantsu0721.top/" target="_blank" style="color: inherit; text-decoration: none;">Pantsumeow</a></br>All Rights Reserved.`;
+
+        document.body.appendChild(creditsDiv);
+    });
+</script>
+</html>
+
