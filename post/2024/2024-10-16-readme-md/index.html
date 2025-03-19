@@ -53,33 +53,28 @@
 
 
   
-  
-  
     
-  
 
-  
-  
-  
-    
-  
 
-  
-    
+<style>
+@font-face {
+  font-family: "汉仪唐美人55w";
+      src:url("/fonts/1.woff2");
+  }
+</style>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   rel="preload"
   as="style"
-  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  href="https://fonts.googleapis.com/css?family=&amp;display=swap"
 />
 <link
   rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  href="https://fonts.googleapis.com/css?family=&amp;display=swap"
   media="print"
   onload="this.media='all'"
 />
-
 
 
 
@@ -115,7 +110,7 @@
     property="og:description"
     content="杂鱼杂鱼杂鱼~"
   />
-  <meta property="og:url" content="https://example.org/post/2024/2024-10-16-readme-md/" />
+  <meta property="og:url" content="https://pantsumeow.github.io/post/2024/2024-10-16-readme-md/" />
   <meta
     property="og:site_name"
     content="Pantsu‘s BLOG"
@@ -150,7 +145,7 @@
 
 
   
- <link rel="stylesheet" href="/css/main.min.c3dabcde8b42d5d11d95554e594ad0b4cf4c3047da740821bb8f7c420f39bcaf.css" />
+ <link rel="stylesheet" href="/css/main.min.84c3bf2dc9ef88e34cd006f482e6633c5bf0e18054f99a2dedf876df0fff66d6.css" />
 
 
 
@@ -175,6 +170,13 @@
     onload="this.onload=null;this.rel='stylesheet'"
   />
 
+
+
+
+  
+
+
+  <link rel="stylesheet" href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css" />
 
 
 
@@ -212,6 +214,13 @@
 
 
 
+
+
+
+  <link rel="stylesheet" href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+
     
   </head>
   <body>
@@ -223,11 +232,7 @@
     <div class="spinner-box">
       <div class="loading-taichi">
         
-          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
-            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff5252" />
-            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
-          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="#ff5252" />
-          </svg>
+          <img src="/banners/MainIcon.png" alt="loading" />
         
       </div>
       <div class="loading-word">胖次正在瞄准你的头部...</div>
@@ -271,44 +276,36 @@
   <nav id="main-nav">
     
       <span class="main-nav-link-wrap">
-        <div class='main-nav-icon icon rotate'>
+        <div class='main-nav-icon icon '>
           
-            
-              &#xe62b;
-            
+            &#x1fa77;
           
         </div>
         <a class="main-nav-link" href="/">首页</a>
       </span>
     
       <span class="main-nav-link-wrap">
-        <div class='main-nav-icon icon rotate'>
+        <div class='main-nav-icon icon '>
           
-            
-              &#xe62b;
-            
+            &#x1fa77;
           
         </div>
         <a class="main-nav-link" href="/archives">归档</a>
       </span>
     
       <span class="main-nav-link-wrap">
-        <div class='main-nav-icon icon rotate'>
+        <div class='main-nav-icon icon '>
           
-            
-              &#xe62b;
-            
+            &#x1fa77;
           
         </div>
         <a class="main-nav-link" href="/about">关于</a>
       </span>
     
       <span class="main-nav-link-wrap">
-        <div class='main-nav-icon icon rotate'>
+        <div class='main-nav-icon icon '>
           
-            
-              &#xe62b;
-            
+            &#x1fa77;
           
         </div>
         <a class="main-nav-link" href="/friend">友链</a>
@@ -329,7 +326,7 @@
       
     </picture>
     
-      <img fetchpriority="high" src="/images/banner.webp" alt="README.md">
+      <img fetchpriority="high" src="/banners/main.avif" alt="README.md">
     
   
 
@@ -363,6 +360,8 @@
             >
           <aside id="sidebar">
   
+  
+    <div id="aplayer" theme="var(--color-link)" data-aos="fade-up"></div>
   
   
   <div class="sidebar-wrapper wrap-sticky">
@@ -409,20 +408,30 @@
   <div class="sidebar-state-article">
     <div>文章</div>
     
-    <div class="sidebar-state-number">11</div>
+    <div class="sidebar-state-number">12</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
     <div class="sidebar-state-number">
-      0
+      2
     </div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">0</div>
+    <div class="sidebar-state-number">4</div>
   </div>
 </div>
 <div class="sidebar-social">
+  
+    <div class="icon-ciallo sidebar-social-icon">
+      <a
+        href="/ciallo/ciallo.html"
+        itemprop="url"
+        target="_blank"
+        aria-label="ciallo"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
   
     <div class="icon-github sidebar-social-icon">
       <a
@@ -430,6 +439,36 @@
         itemprop="url"
         target="_blank"
         aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-happyapi sidebar-social-icon">
+      <a
+        href="https://moe.jitsu.top/img/?sort=pixiv"
+        itemprop="url"
+        target="_blank"
+        aria-label="happyapi"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-kuru sidebar-social-icon">
+      <a
+        href="/herta/kuru.html"
+        itemprop="url"
+        target="_blank"
+        aria-label="kuru"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-pilipala sidebar-social-icon">
+      <a
+        href="/fireworks/fireworks.html"
+        itemprop="url"
+        target="_blank"
+        aria-label="pilipala"
         rel="noopener external nofollow noreferrer"
       ></a>
     </div>
@@ -453,11 +492,9 @@
         href="/"
         aria-label="首页"
       ></a>
-      <div class='sidebar-menu-icon icon rotate'>
+      <div class='sidebar-menu-icon icon '>
         
-          
-            &#xe62b;
-          
+          &#x1fa77;
         
       </div>
       <div class="sidebar-menu-link">首页</div>
@@ -469,11 +506,9 @@
         href="/archives"
         aria-label="归档"
       ></a>
-      <div class='sidebar-menu-icon icon rotate'>
+      <div class='sidebar-menu-icon icon '>
         
-          
-            &#xe62b;
-          
+          &#x1fa77;
         
       </div>
       <div class="sidebar-menu-link">归档</div>
@@ -485,11 +520,9 @@
         href="/about"
         aria-label="关于"
       ></a>
-      <div class='sidebar-menu-icon icon rotate'>
+      <div class='sidebar-menu-icon icon '>
         
-          
-            &#xe62b;
-          
+          &#x1fa77;
         
       </div>
       <div class="sidebar-menu-link">关于</div>
@@ -501,11 +534,9 @@
         href="/friend"
         aria-label="友链"
       ></a>
-      <div class='sidebar-menu-icon icon rotate'>
+      <div class='sidebar-menu-icon icon '>
         
-          
-            &#xe62b;
-          
+          &#x1fa77;
         
       </div>
       <div class="sidebar-menu-link">友链</div>
@@ -617,7 +648,7 @@
   
   
     <p>
-      <strong><span class="icon-link icon"></span>本文链接：</strong><a href="https://example.org/post/2024/2024-10-16-readme-md/">https://example.org/post/2024/2024-10-16-readme-md/</a>
+      <strong><span class="icon-link icon"></span>本文链接：</strong><a href="https://pantsumeow.github.io/post/2024/2024-10-16-readme-md/">https://pantsumeow.github.io/post/2024/2024-10-16-readme-md/</a>
     </p>
   
   
@@ -635,7 +666,91 @@
       
 
       
+        <div class="sponsor-wrapper">
+  <div class="sponsor-button-wrapper">
+    <div class="sponsor-icon rotate"></div>
+    <div class="sponsor-title">赞助</div>
+    <div class="sponsor-icon rotate"></div>
+  </div>
+  <div class="sponsor-tip">请用钱砸我喵~</div>
+  
+    <div class="sponsor-qr">
+      
+        <div class="sponsor-qr-image-wrapper">
+          <img src="/sponsor/wechat.png" alt="微信" width="200" />
+          <p class="sponsor-qr-name">微信</p>
+        </div>
+      
+    </div>
+  
+</div>
+      
 
+      
+        
+
+<div class="share-wrapper">
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://pantsumeow.github.io/post/2024/2024-10-16-readme-md/" target="_blank" rel="noopener noreferrer" title="README.md">
+      <div class="share-icon icon icon-facebook">
+        
+      </div>
+    </a>
+  
+    <a href="https://twitter.com/intent/tweet?url=https://pantsumeow.github.io/post/2024/2024-10-16-readme-md/&amp;text=README.md&amp;via=https://pantsumeow.github.io/" target="_blank" rel="noopener noreferrer" title="README.md">
+      <div class="share-icon icon icon-twitter">
+        
+      </div>
+    </a>
+  
+    <a href="http://connect.qq.com/widget/shareqq/index.html?url=https://pantsumeow.github.io/post/2024/2024-10-16-readme-md/&amp;title=README.md&amp;desc=%20%e8%bf%99%e6%98%af%e4%b8%80%e7%af%87%e6%96%87%e7%ab%a0%ef%bc%8c%e4%bb%8b%e7%bb%8d%e4%ba%86blog.pantsu0721.top%e7%9a%84%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95%e3%80%82%20%e8%af%b7%e6%b3%a8%e6%84%8f%ef%bc%8c%e8%af%a5URL%e4%bd%bf%e7%94%a8%e4%ba%86%e6%98%be%e6%80%a7URL%e8%bd%ac%e5%8f%91%28%e6%8a%80%e6%9c%af%e5%8a%9b%e4%b8%8d%e8%b6%b3%5e%20%5e%29%ef%bc%8c%e5%a6%82%e6%9e%9c%e4%bd%a0%e6%84%bf%e6%84%8f%e8%ae%b0pantsu0721.top:2223%e4%b9%9f%e5%8f%af%e4%bb%a5%ef%bc%8c%e9%83%bd%e5%8f%af%e4%bb%a5%e8%ae%bf%e9%97%ae%e6%9c%ac%e7%ab%99%e3%80%82%0a&amp;source=https://pantsumeow.github.io/" target="_blank" rel="noopener noreferrer" title="README.md">
+      <div class="share-icon icon icon-qq">
+        
+      </div>
+    </a>
+  
+    <a href="javascript:;"  title="README.md">
+      <div class="share-icon icon icon-weixin">
+        
+          <div id="share-weixin">
+            <div class="share-weixin-dom">
+              <div class="share-weixin-content">
+                <img id="share-weixin-banner"> 
+                <div id="share-weixin-title"></div>
+                <div id="share-weixin-desc"></div>
+              </div>
+              <div class="share-weixin-qrcode">
+                <div class="share-weixin-info">
+                  <div id="share-weixin-author"></div>
+                  <div id="share-weixin-theme">Powered By hugo-theme-reimu</div>
+                </div>
+                <img id="share-weixin-qr" >
+              </div>
+            </div>
+            <div class="share-weixin-canvas"></div>
+          </div>
+        
+      </div>
+    </a>
+  
+</div>
+      
+
+      
+
+      
+        <a
+          data-aos="zoom-in"
+          href="https://pantsumeow.github.io/post/2024/2024-10-16-readme-md/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="https//pantsumeow.github.io/post/2024/2024-10-16-readme-md/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a>
       
 
       
@@ -643,9 +758,17 @@
       
 
       
-
-      
-
+        <span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/post/2024/2024-10-16-readme-md/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span>
       
       <ul class="article-tag-list" itemprop="keywords">
   
@@ -660,28 +783,28 @@
     data-aos="fade-up"
   >
     
-
-    
-      <div class="article-nav-link-wrap article-nav-link-right">
+      <div class="article-nav-link-wrap article-nav-link-left">
         
           
           
             <img
-              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
+              data-src="/banners/4.avif"
               data-sizes="auto"
-              alt="投喂我"
+              alt="链接导航页"
               class="lazyload"
             />
           
         
-        <a href="https://example.org/post/2024/2024-10-19-%E6%8A%95%E5%96%82%E6%88%91/"></a>
-        <div class="article-nav-caption">后一篇</div>
+        <a href="https://pantsumeow.github.io/post/navigation/"></a>
+        <div class="article-nav-caption">前一篇</div>
         <h3 class="article-nav-title">
           
-            投喂我
+            链接导航页
           
         </h3>
       </div>
+    
+
     
   </nav>
 
@@ -690,6 +813,12 @@
 </article>
 
 
+
+  <div
+    id="comments"
+    class="wcomment"
+    data-aos="fade-up"
+  ></div>
 
 
 
@@ -705,6 +834,9 @@
         
 
 
+
+  
+  
 
   
   
@@ -771,7 +903,7 @@
       <div>
         <span class="icon-brush"
           >&nbsp;
-            145
+            9.0k
           </span
         >
         &nbsp;|&nbsp;
@@ -779,7 +911,7 @@
           
           
 
-          00:11
+          00:26
         </span>
       </div>
     
@@ -854,20 +986,30 @@
   <div class="sidebar-state-article">
     <div>文章</div>
     
-    <div class="sidebar-state-number">11</div>
+    <div class="sidebar-state-number">12</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
     <div class="sidebar-state-number">
-      0
+      2
     </div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">0</div>
+    <div class="sidebar-state-number">4</div>
   </div>
 </div>
 <div class="sidebar-social">
+  
+    <div class="icon-ciallo sidebar-social-icon">
+      <a
+        href="/ciallo/ciallo.html"
+        itemprop="url"
+        target="_blank"
+        aria-label="ciallo"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
   
     <div class="icon-github sidebar-social-icon">
       <a
@@ -875,6 +1017,36 @@
         itemprop="url"
         target="_blank"
         aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-happyapi sidebar-social-icon">
+      <a
+        href="https://moe.jitsu.top/img/?sort=pixiv"
+        itemprop="url"
+        target="_blank"
+        aria-label="happyapi"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-kuru sidebar-social-icon">
+      <a
+        href="/herta/kuru.html"
+        itemprop="url"
+        target="_blank"
+        aria-label="kuru"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-pilipala sidebar-social-icon">
+      <a
+        href="/fireworks/fireworks.html"
+        itemprop="url"
+        target="_blank"
+        aria-label="pilipala"
         rel="noopener external nofollow noreferrer"
       ></a>
     </div>
@@ -898,11 +1070,9 @@
         href="/"
         aria-label="首页"
       ></a>
-      <div class='sidebar-menu-icon icon rotate'>
+      <div class='sidebar-menu-icon icon '>
         
-          
-            &#xe62b;
-          
+          &#x1fa77;
         
       </div>
       <div class="sidebar-menu-link">首页</div>
@@ -914,11 +1084,9 @@
         href="/archives"
         aria-label="归档"
       ></a>
-      <div class='sidebar-menu-icon icon rotate'>
+      <div class='sidebar-menu-icon icon '>
         
-          
-            &#xe62b;
-          
+          &#x1fa77;
         
       </div>
       <div class="sidebar-menu-link">归档</div>
@@ -930,11 +1098,9 @@
         href="/about"
         aria-label="关于"
       ></a>
-      <div class='sidebar-menu-icon icon rotate'>
+      <div class='sidebar-menu-icon icon '>
         
-          
-            &#xe62b;
-          
+          &#x1fa77;
         
       </div>
       <div class="sidebar-menu-link">关于</div>
@@ -946,11 +1112,9 @@
         href="/friend"
         aria-label="友链"
       ></a>
-      <div class='sidebar-menu-icon icon rotate'>
+      <div class='sidebar-menu-icon icon '>
         
-          
-            &#xe62b;
-          
+          &#x1fa77;
         
       </div>
       <div class="sidebar-menu-link">友链</div>
@@ -983,7 +1147,7 @@
             <div id="reimu-hits"></div>
             <div id="reimu-pagination" class="reimu-pagination"></div>
           </div>
-          <img class="reimu-bg" src="/images/reimu.png" />
+          <img class="reimu-bg" src="/images/bg_search_oneofmywife.png" />
         </div>
       </div>
     
@@ -1089,14 +1253,14 @@
       algolia: {
         applicationID: "8RKOCBIDWG",
         apiKey: "954f7aeeacabe8e0592e924b63ccb34e",
-        indexName: "1",
+        indexName: "hello",
         hits: {
           "per_page": parseInt("10")
         },
         labels: {
-          "input_placeholder": "搜索.....",
-          "hits_empty": "未发现与 「${query}」相关内容",
-          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+          "input_placeholder": "香草正在思考.....",
+          "hits_empty": "香草未发现与 「${query}」相关内容",
+          "hits_stats": "香草找到${hits}条结果（思考 ${time} ms）"
         }
       }
     };
@@ -1182,6 +1346,29 @@
 
 
 
+<script>
+  function initLive2d() {
+    live2d.init('https:\/\/fastly.jsdelivr.net\/gh\/D-Sketon\/plugin-live2d\/', {themeTipsPath: ""});
+  }
+</script> 
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://fastly.jsdelivr.net/gh/D-Sketon/plugin-live2d/js/live2d-autoload.js"
+    
+    async
+    
+    onload="initLive2d()"
+    
+  ></script>
+
+
+
 
 
 
@@ -1196,9 +1383,9 @@
         window.REIMU_POST = {
           author: "一条胖次",
           title: "README.md",
-          url: "https:\/\/example.org\/post\/2024\/2024-10-16-readme-md\/",
-          description: " 这是一篇文章，介绍了blog.pantsu0721.top的使用方法。 请注意，该URL使用了显性URL转发(技术力不足^ ^)，如果你愿意记pantsu0721.top:2223也可以，都可以访问本站。\n不过分享本站时还请使用blog.pantsu0721.top。\n最好使用PC端访问小站，原因同上。\n定位 小站的诞生是一个意外，是站长不知道又双叒叕抽了什么风开的一个项目，仅作为个人学习使用。小站致力于为喜欢二次元的各位提供交流的平台，但奈何站长只是个学生，并没有过多的精力和金钱投入到小站，因此在小站哭闹的时候站长可能不会立即将其安抚好，还请见谅。\n功能 小站本质上就是个建立在个人服务器上 …",
-          cover: "https:\/\/example.org\/images\/banner.webp",
+          url: "https:\/\/pantsumeow.github.io\/post\/2024\/2024-10-16-readme-md\/",
+          description: " 这是一篇文章，介绍了blog.pantsu0721.top的使用方法。 请注意，该URL使用了显性URL转发(技术力不足^ ^)，如果你愿意记pantsu0721.top:2223也可以，都可以访问本站。\n",
+          cover: "https:\/\/pantsumeow.github.io\/banners\/main.avif",
         };
       </script>
     
@@ -1253,10 +1440,67 @@
 
 
 
+<script data-pjax type="module">
+  const { init } = await safeImport('https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs', 'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5');
+  if(_$('.wcomment')) {
+    window.walineInstance = init({
+      el: '.wcomment',
+      serverURL: 'https:\/\/walinesystem-bnq0b9z9l-pantsumeows-projects.vercel.app\/',
+      lang: 'zh-CN',
+      locale: JSON.parse("{}"),
+      emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+      meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+      requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+      wordLimit:  0 ,
+      comment: true,
+      pageSize:  10 ,
+      dark: 'html[data-theme="dark"]',
+      pageview:  true ,
+    });
+  }
+</script>
 
 
 
 
+
+
+
+      
+        
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/qrcode@1.4.4/build/qrcode.min.js"
+    defer
+    
+    data-pjax
+    
+    integrity="sha384-0RsG1yo/crf/1Qc14sho26SXXOTngNCjgJw7fuvXBt9W/OChF/Ijx&#43;aUuBDqQwEk" crossorigin="anonymous"
+  ></script>
+
+
+        
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/html-to-image@1.11.11/dist/html-to-image.js"
+    defer
+    
+    data-pjax
+    
+    integrity="sha384-UbfRVKN3/elS1r7JcK2FhmPP&#43;KlJ4CvYwbyYD7tH&#43;uTkbT9bNJr9eJeQ0FoFbAgz" crossorigin="anonymous"
+  ></script>
 
 
       
@@ -1317,6 +1561,43 @@
   );
 </script>
 
+
+  
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    
+    
+    
+    
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"
+  ></script>
+
+
+  
+    <script>
+      const ap = new APlayer({
+          theme: "var(--color-link)",
+          container: document.getElementById('aplayer'),
+          audio: JSON.parse("[{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"A Harmonious Rest 安宁的天光\",\"url\":\"/blog_music/《原神》A Harmonious Rest 安宁的天光 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"A Memorable Fancy 温情的遥忆\",\"url\":\"/blog_music/《原神》A Memorable Fancy 温情的遥忆 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Above the Sea of Clouds 云海之上\",\"url\":\"/blog_music/《原神》Above the Sea of Clouds 云海之上 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Ballad of Many Waters 众水之诗\",\"url\":\"/blog_music/《原神》Ballad of Many Waters 众水之诗 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Call It a Day in Liyue 璃月的一日将尽\",\"url\":\"/blog_music/《原神》Call It a Day in Liyue 璃月的一日将尽 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Callirhoes Prayer 清泉之诗\",\"url\":\"/blog_music/《原神》Callirhoes Prayer清泉之诗  - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"City of Mellifluous Glory 百乐谐荣之城\",\"url\":\"/blog_music/《原神》City of Mellifluous Glory 百乐谐荣之城 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"City of Mellifluous Glory 半入江风半入云\",\"url\":\"/blog_music/《原神》City of Mellifluous Glory 半入江风半入云 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Cozy Leisure Time 品茗尝清心\",\"url\":\"/blog_music/《原神》Cozy Leisure Time (Wangshu Daytime) 品茗尝清心 (望舒昼间) - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Dream of Scattered Petals 华散之梦\",\"url\":\"/blog_music/《原神》Dream of Scattered Petals 华散之梦 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Dusk in Mondstadt 蒙德的黄昏\",\"url\":\"/blog_music/《原神》Dusk in Mondstadt 蒙德的黄昏 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Good Night, Liyue 晚安，璃月\",\"url\":\"/blog_music/《原神》Good Night, Liyue 晚安，璃月 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Hanachirusato 华散之缘\",\"url\":\"/blog_music/《原神》Hanachirusato 华散之缘 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Hustle and Bustle of Ormos 喧繁之港\",\"url\":\"/blog_music/《原神》Hustle and Bustle of Ormos 喧繁之港 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Innocent Age 无虑无猜的岁月\",\"url\":\"/blog_music/《原神》Innocent Age 无虑无猜的岁月 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Invitation of Windblume 风花的邀约\",\"url\":\"/blog_music/《原神》Invitation of Windblume 风花的邀约 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Kitsune’s Mask 悠远的关怀\",\"url\":\"/blog_music/《原神》Kitsune’s Mask 悠远的关怀 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Lingering Blossom 永远的花火\",\"url\":\"/blog_music/《原神》Lingering Blossom 永远的花火 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Liyue 璃月\",\"url\":\"/blog_music/《原神》Liyue 璃月 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Maiden’s Longing 环佩凭栏望千帆\",\"url\":\"/blog_music/《原神》Maiden’s Longing 环佩凭栏望千帆 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Mellow Alize 煦风染细浪\",\"url\":\"/blog_music/《原神》Mellow Alize 煦风染细浪 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Moon in One’s Cup 杯中明月\",\"url\":\"/blog_music/《原神》Moon in One’s Cup 杯中明月 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Moonlike Smile 皎洁的笑颜\",\"url\":\"/blog_music/《原神》Moonlike Smile 皎洁的笑颜 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Morning Song in the Forest 林中晨歌\",\"url\":\"/blog_music/《原神》Morning Song in the Forest 林中晨歌 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Pathos of Shirasagi 白鹭舒翼\",\"url\":\"/blog_music/《原神》Pathos of Shirasagi 白鹭舒翼 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Peaceful Hike 山风拂萝衣\",\"url\":\"/blog_music/《原神》Peaceful Hike (Qingce Daytime) 山风拂萝衣 (轻策昼间) - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Pluie sur la ville 轻雨何故落\",\"url\":\"/blog_music/《原神》Pluie sur la ville 轻雨何故落 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Que le vent soit doux 柔风的欢愿\",\"url\":\"/blog_music/《原神》Que le vent soit doux 柔风的欢愿 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Rainbow at Summit 虹霞垂天\",\"url\":\"/blog_music/《原神》Rainbow at Summit 虹霞垂天 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Resonance of Khvarena 灵光的回响\",\"url\":\"/blog_music/《原神》Resonance of Khvarena 灵光的回响 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"The Fading Stories 不再年轻的村庄\",\"url\":\"/blog_music/《原神》The Fading Stories (Qingce Night) 不再年轻的村庄 (轻策夜间) - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"The Parade of Flying Squirrels 飞鼠进行曲\",\"url\":\"/blog_music/《原神》The Parade of Flying Squirrels 飞鼠进行曲 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Vagrant Wandering 无羁的漫游\",\"url\":\"/blog_music/《原神》Vagrant Wandering 无羁的漫游 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Vast and Blue 广袤的晴空\",\"url\":\"/blog_music/《原神》Vast and Blue 广袤的晴空 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"What a Delightful Scenery 埠上风光\",\"url\":\"/blog_music/《原神》What a Delightful Scenery 埠上风光 - HOYO-MiX.mp3\"},{\"author\":\"HOYO-MiX\",\"pic\":\"avatar/avatar.png\",\"title\":\"Windborne Hymn 风带来的圣歌\",\"url\":\"/blog_music/《原神》Windborne Hymn 风带来的圣歌 - 陈致逸,HOYO-MiX.mp3\"},{\"author\":\"三轮学\",\"pic\":\"avatar/avatar.png\",\"title\":\"無くならない大事な心\",\"url\":\"/blog_music/《缘之空》無くならない大事な心 - 三轮学.mp3\"},{\"author\":\"三轮学\",\"pic\":\"avatar/avatar.png\",\"title\":\"膝枕で過ごす放課後\",\"url\":\"/blog_music/《缘之空》膝枕で過ごす放課後 (在膝枕上度过放学后) - 三轮学.mp3\"},{\"author\":\"三轮学\",\"pic\":\"avatar/avatar.png\",\"title\":\"追い求めてきたもの\",\"url\":\"/blog_music/《缘之空》追い求めてきたもの - 三轮学.mp3\"},{\"author\":\"松本文紀\",\"pic\":\"avatar/avatar.png\",\"title\":\"暖かな時間\",\"url\":\"/blog_music/《ATRI -My Dear Moments-》暖かな時間 - 松本文紀.mp3\"},{\"author\":\"松本文紀\",\"pic\":\"avatar/avatar.png\",\"title\":\"親愛なるあの日々へ\",\"url\":\"/blog_music/《ATRI -My Dear Moments-》親愛なるあの日々へ - 松本文紀.mp3\"},{\"author\":\"前田雄吾\",\"pic\":\"avatar/avatar.png\",\"title\":\"Aibyou\",\"url\":\"/blog_music/《Nekopara》Aibyou - 前田雄吾.mp3\"},{\"author\":\"うたたね歌菜\",\"pic\":\"avatar/avatar.png\",\"title\":\"華色の青春\",\"url\":\"/blog_music/《败犬女主太多了》華色の青春 - うたたね歌菜.mp3\"},{\"author\":\"Famishin\",\"pic\":\"avatar/avatar.png\",\"title\":\"Sweet Sweet アリス _Quiet Version_\",\"url\":\"/blog_music/《魔女的夜宴》Sweet Sweet アリス _Quiet Version_ - Famishin.mp3\"},{\"author\":\"Famishin\",\"pic\":\"avatar/avatar.png\",\"title\":\"Csweet treasure _Instrument Vers_\",\"url\":\"/blog_music/《魔女的夜宴》sweet treasure _Instrument Vers_ - Famishin.mp3\"},{\"author\":\"Famishin\",\"pic\":\"avatar/avatar.png\",\"title\":\"二人の魔法\",\"url\":\"/blog_music/《魔女的夜宴》二人の魔法 - Famishin.mp3\"},{\"author\":\"久石譲\",\"pic\":\"avatar/avatar.png\",\"title\":\"人生のメリーゴーランド\",\"url\":\"/blog_music/《哈尔的移动城堡》人生のメリーゴーランド - 久石譲.mp3\"},{\"author\":\"RADWIMPS\",\"pic\":\"avatar/avatar.png\",\"title\":\"かたわれ時\",\"url\":\"/blog_music/《你的名字。》かたわれ時 - RADWIMPS.mp3\"},{\"author\":\"RADWIMPS\",\"pic\":\"avatar/avatar.png\",\"title\":\"デート\",\"url\":\"/blog_music/《你的名字。》デート-RADWIMPS.mp3\"},{\"author\":\"RADWIMPS\",\"pic\":\"avatar/avatar.png\",\"title\":\"三葉の通学\",\"url\":\"/blog_music/《你的名字。》三葉の通学 - RADWIMPS.mp3\"},{\"author\":\"RADWIMPS\",\"pic\":\"avatar/avatar.png\",\"title\":\"家族の時間\",\"url\":\"/blog_music/《天气之子》家族の時間 - RADWIMPS.mp3\"},{\"author\":\"RADWIMPS\",\"pic\":\"avatar/avatar.png\",\"title\":\"晴れゆく空\",\"url\":\"/blog_music/《天气之子》晴れゆく空 - RADWIMPS.mp3\"},{\"author\":\"RADWIMPS\",\"pic\":\"avatar/avatar.png\",\"title\":\"陽菜と、走る帆高\",\"url\":\"/blog_music/《天气之子》陽菜と、走る帆高 - RADWIMPS.mp3\"},{\"author\":\"MONACA\",\"pic\":\"avatar/avatar.png\",\"title\":\"誠に遺憾ながら、知り合い?\",\"url\":\"/blog_music/《我的青春恋爱物语果然有问题。》誠に遺憾ながら、知り合い - MONACA.mp3\"},{\"author\":\"Famishin\",\"pic\":\"avatar/avatar.png\",\"title\":\"とおりゃんせ～甘美風来\",\"url\":\"/blog_music/《千恋＊万花》とおりゃんせ～甘美風来.mp3\"},{\"author\":\"Famishin\",\"pic\":\"avatar/avatar.png\",\"title\":\"くつろぎの間\",\"url\":\"/blog_music/《千恋＊万花》くつろぎの間.mp3\"},{\"author\":\"Famishin\",\"pic\":\"avatar/avatar.png\",\"title\":\"田心屋\",\"url\":\"/blog_music/《千恋＊万花》田心屋.mp3\"},{\"author\":\"Famishin\",\"pic\":\"avatar/avatar.png\",\"title\":\"身も心も…\",\"url\":\"/blog_music/《千恋＊万花》身も心も….mp3\"},{\"author\":\"Famishin\",\"pic\":\"avatar/avatar.png\",\"title\":\"縁結び\",\"url\":\"/blog_music/《千恋＊万花》縁結び.mp3\"}]") || [],
+          fixed:  false  || false,
+          autoplay:  true  || false,
+          loop: '' || 'all',
+          order: 'random' || 'list',
+          preload: 'auto' || 'auto',
+          volume:  0.5  || 0.7,
+          mutex:  true  || true,
+          listFolded:  true  || false,
+          lrcType:  null  || 0,
+      });
+    </script>
+  
 
 
 
