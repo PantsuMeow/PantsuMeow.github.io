@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Pantsu‘s BLOG</title>
-    <link>https://pantsumeow.github.io/categories/</link>
+    <link>https://blog.pantsu0721.top/categories/</link>
     <description>Recent content in Categories on Pantsu‘s BLOG</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://pantsumeow.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.pantsu0721.top/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>随笔</title>
-      <link>https://pantsumeow.github.io/categories/%E9%9A%8F%E7%AC%94/</link>
+      <link>https://blog.pantsu0721.top/categories/%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pantsumeow.github.io/categories/%E9%9A%8F%E7%AC%94/</guid>
+      <guid>https://blog.pantsu0721.top/categories/%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
     <item>
       <title>文章</title>
-      <link>https://pantsumeow.github.io/categories/%E6%96%87%E7%AB%A0/</link>
+      <link>https://blog.pantsu0721.top/categories/%E6%96%87%E7%AB%A0/</link>
       <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://pantsumeow.github.io/categories/%E6%96%87%E7%AB%A0/</guid>
+      <guid>https://blog.pantsu0721.top/categories/%E6%96%87%E7%AB%A0/</guid>
       <description></description>
     </item>
   </channel>
