@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Pantsu‘s BLOG</title>
-    <link>https://blog.pantsu0721.top/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Pantsu‘s BLOG</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.pantsu0721.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2025年的祝福</title>
-      <link>https://blog.pantsu0721.top/tags/2025%E5%B9%B4%E7%9A%84%E7%A5%9D%E7%A6%8F/</link>
-      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.pantsu0721.top/tags/2025%E5%B9%B4%E7%9A%84%E7%A5%9D%E7%A6%8F/</guid>
+      <title>我的日常</title>
+      <link>http://localhost:1313/tags/%E6%88%91%E7%9A%84%E6%97%A5%E5%B8%B8/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%E6%88%91%E7%9A%84%E6%97%A5%E5%B8%B8/</guid>
       <description></description>
     </item>
     <item>
-      <title>我的日常</title>
-      <link>https://blog.pantsu0721.top/tags/%E6%88%91%E7%9A%84%E6%97%A5%E5%B8%B8/</link>
-      <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://blog.pantsu0721.top/tags/%E6%88%91%E7%9A%84%E6%97%A5%E5%B8%B8/</guid>
+      <title>2025年的祝福</title>
+      <link>http://localhost:1313/tags/2025%E5%B9%B4%E7%9A%84%E7%A5%9D%E7%A6%8F/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/2025%E5%B9%B4%E7%9A%84%E7%A5%9D%E7%A6%8F/</guid>
       <description></description>
     </item>
     <item>
       <title>动漫评价</title>
-      <link>https://blog.pantsu0721.top/tags/%E5%8A%A8%E6%BC%AB%E8%AF%84%E4%BB%B7/</link>
+      <link>http://localhost:1313/tags/%E5%8A%A8%E6%BC%AB%E8%AF%84%E4%BB%B7/</link>
       <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://blog.pantsu0721.top/tags/%E5%8A%A8%E6%BC%AB%E8%AF%84%E4%BB%B7/</guid>
+      <guid>http://localhost:1313/tags/%E5%8A%A8%E6%BC%AB%E8%AF%84%E4%BB%B7/</guid>
       <description></description>
     </item>
     <item>
       <title>小站日常</title>
-      <link>https://blog.pantsu0721.top/tags/%E5%B0%8F%E7%AB%99%E6%97%A5%E5%B8%B8/</link>
+      <link>http://localhost:1313/tags/%E5%B0%8F%E7%AB%99%E6%97%A5%E5%B8%B8/</link>
       <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://blog.pantsu0721.top/tags/%E5%B0%8F%E7%AB%99%E6%97%A5%E5%B8%B8/</guid>
+      <guid>http://localhost:1313/tags/%E5%B0%8F%E7%AB%99%E6%97%A5%E5%B8%B8/</guid>
       <description></description>
     </item>
   </channel>
