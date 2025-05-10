@@ -5,7 +5,7 @@
     data-theme-mode="auto"
   
 >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
     <meta charset="utf-8" />
 <meta
@@ -99,9 +99,7 @@
 
 
 
-
-  
- <link rel="stylesheet" href="/css/loader.min.2ad0e9bbffb534e893c0ecefc44787a277cf851387e8ad9dccfbc3a5f0886dbe.css" />
+ <link rel="stylesheet" href="/css/loader.css" />
 
 
 
@@ -112,7 +110,7 @@
     property="og:description"
     content="杂鱼杂鱼杂鱼~"
   />
-  <meta property="og:url" content="https://blog.pantsu0721.top/ja/tags/" />
+  <meta property="og:url" content="http://localhost:1313/ja/tags/" />
   <meta
     property="og:site_name"
     content="Pantsu‘s BLOG"
@@ -135,7 +133,7 @@
   
 
 
-<link rel="alternate" type="application/rss+xml" href="https://blog.pantsu0721.top/ja/tags/index.xml" title="Pantsu‘s BLOG">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/ja/tags/index.xml" title="Pantsu‘s BLOG">
 
 
 <link rel="shortcut icon" href="/favicon.ico">
@@ -146,9 +144,7 @@
 
 
 
-
-  
- <link rel="stylesheet" href="/css/main.min.399c7f2cf109af572f1f48264252a0cbc1091953c48ec3ea04a5277aab2c8c84.css" />
+ <link rel="stylesheet" href="/css/main.css" />
 
 
 
@@ -317,7 +313,7 @@
     <a id="main-nav-toggle" class="nav-icon"></a>
   </nav>
   <nav id="sub-nav">
-    <a id="nav-rss-link" class="nav-icon" href="https://blog.pantsu0721.top/ja/tags/index.xml" title="RSS フィード" target="_blank"></a>
+    <a id="nav-rss-link" class="nav-icon" href="http://localhost:1313/ja/tags/index.xml" title="RSS フィード" target="_blank"></a>
     
     
       <a id="nav-search-btn" class="nav-icon popup-trigger" title="検索"></a>
@@ -939,7 +935,7 @@
 
   
       
-      <script src="/js/main.js" integrity="" crossorigin="anonymous" ></script>
+      <script src="/js/main.js" ></script>
       
 
 
@@ -952,7 +948,7 @@
 
   
       
-      <script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script>
+      <script src="/js/aos.js" ></script>
       
 
   <script>
@@ -980,7 +976,7 @@
 
   
       
-      <script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script>
+      <script src="/js/pjax_main.js" data-pjax></script>
       
 
 
@@ -1047,7 +1043,7 @@
 
   
       
-      <script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script>
+      <script src="/js/algolia_search.js" ></script>
       
 
 
@@ -1157,7 +1153,7 @@
 
   
       
-      <script src="/js/pjax.js" integrity="" crossorigin="anonymous" ></script>
+      <script src="/js/pjax.js" ></script>
       
 
 
@@ -1200,9 +1196,9 @@
         window.REIMU_POST = {
           author: "一条胖次",
           title: "Tags",
-          url: "https:\/\/blog.pantsu0721.top\/ja\/tags\/",
+          url: "http:\/\/localhost:1313\/ja\/tags\/",
           description: "",
-          cover: "https:\/\/blog.pantsu0721.top\/banners\/main.avif",
+          cover: "http:\/\/localhost:1313\/banners\/main.avif",
         };
       </script>
     
@@ -1216,7 +1212,7 @@
 
   
       
-      <script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script>
+      <script src="/js/insert_highlight.js" data-pjax></script>
       
 
       
@@ -1363,16 +1359,27 @@
 
 <script>
   const reimuCopyright = String.raw`
-   ______     ______     __     __    __     __  __    
-  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
-  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
-   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
-    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+ ________    ________      ________       _________    ________       ___  ___      ________      ________    _______       _____     
+|\   __  \  |\   __  \    |\   ___  \    |\___   ___\ |\   ____\     |\  \|\  \    |\   __  \    |\_____  \  /  ___  \     / __  \    
+\ \  \|\  \ \ \  \|\  \   \ \  \\ \  \   \|___ \  \_| \ \  \___|_    \ \  \\\  \   \ \  \|\  \    \|___/  /|/__/|_/  /|   |\/_|\  \   
+ \ \   ____\ \ \   __  \   \ \  \\ \  \       \ \  \   \ \_____  \    \ \  \\\  \   \ \  \\\  \       /  / /|__|//  / /   \|/ \ \  \  
+  \ \  \___|  \ \  \ \  \   \ \  \\ \  \       \ \  \   \|____|\  \    \ \  \\\  \   \ \  \\\  \     /  / /     /  /_/__       \ \  \ 
+   \ \__\      \ \__\ \__\   \ \__\\ \__\       \ \__\    ____\_\  \    \ \_______\   \ \_______\   /__/ /     |\________\      \ \__\
+    \|__|       \|__|\|__|    \|__| \|__|        \|__|   |\_________\    \|_______|    \|_______|   |__|/       \|_______|       \|__|
+                                                         \|_________|                                                                 
+
+██████╗  █████╗ ███╗   ██╗████████╗███████╗██╗   ██╗███╗   ███╗███████╗ ██████╗ ██╗    ██╗
+██╔══██╗██╔══██╗████╗  ██║╚══██╔══╝██╔════╝██║   ██║████╗ ████║██╔════╝██╔═══██╗██║    ██║
+██████╔╝███████║██╔██╗ ██║   ██║   ███████╗██║   ██║██╔████╔██║█████╗  ██║   ██║██║ █╗ ██║
+██╔═══╝ ██╔══██║██║╚██╗██║   ██║   ╚════██║██║   ██║██║╚██╔╝██║██╔══╝  ██║   ██║██║███╗██║
+██║     ██║  ██║██║ ╚████║   ██║   ███████║╚██████╔╝██║ ╚═╝ ██║███████╗╚██████╔╝╚███╔███╔╝
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝ ╚═════╝  ╚══╝╚══╝ 
+                                                                                          
                                                     
   `;
   console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
   console.log(
-    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "%c AboutMe" + " %c https://pantsu0721.com ",
     "color: white; background: #ff5252; padding:5px 0;",
     "padding:4px;border:1px solid #ff5252;",
   );
