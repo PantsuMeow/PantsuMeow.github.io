@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Pantsu‘s BLOG</title>
-    <link>https://blog.pantsu0721.top:1313/zh-tw/tags/</link>
+    <link>https://blog.pantsu0721.top/zh-tw/tags/</link>
     <description>Recent content in Tags on Pantsu‘s BLOG</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <atom:link href="https://blog.pantsu0721.top:1313/zh-tw/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.pantsu0721.top/zh-tw/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
