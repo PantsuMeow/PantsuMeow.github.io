@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pantsu‘s BLOG</title>
-    <link>http://localhost:1313/ja/algolia.json</link>
+    <link>https://blog.pantsu0721.top:1313/ja/algolia.json</link>
     <description>Recent content on Pantsu‘s BLOG</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="http://localhost:1313/ja/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.pantsu0721.top:1313/ja/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

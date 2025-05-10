@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Pantsu‘s BLOG</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://blog.pantsu0721.top:1313/categories/</link>
     <description>Recent content in Categories on Pantsu‘s BLOG</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 28 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.pantsu0721.top:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>随笔</title>
-      <link>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</link>
+      <link>https://blog.pantsu0721.top:1313/categories/%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</guid>
+      <guid>https://blog.pantsu0721.top:1313/categories/%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
     <item>
       <title>文章</title>
-      <link>http://localhost:1313/categories/%E6%96%87%E7%AB%A0/</link>
+      <link>https://blog.pantsu0721.top:1313/categories/%E6%96%87%E7%AB%A0/</link>
       <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/%E6%96%87%E7%AB%A0/</guid>
+      <guid>https://blog.pantsu0721.top:1313/categories/%E6%96%87%E7%AB%A0/</guid>
       <description></description>
     </item>
   </channel>
