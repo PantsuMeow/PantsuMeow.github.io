@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yuzu~yuzu</title>
     <link rel="shortcut icon" href="favicon.ico" />
     <style>
+        :root {
+            --primary-color: #ff7bac;
+            --secondary-color: #6a5acd;
+            --accent-color: #41b883;
+            --yuzu-color: #ff6b9d;
+            --muq-color: #6a5acd;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f9d6ff, #d6e6ff);
+            overflow-x: hidden;
+            font-family: 'Comic Sans MS', 'Yu Gothic', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23ff7bac" opacity="0.7"/></svg>'), auto;
+            position: relative;
+            padding-bottom: 40px; /* 为版权信息留出空间 */
+        }
+        
         .center {
             width: 540px;
             height: 120px;
@@ -14,202 +35,604 @@
             bottom: 0;
             left: 0;
             right: 0;
+            z-index: 10;
         }
+        
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+        
+        #main img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            pointer-events: auto;
+        }
+        
+        #main img:hover {
+            transform: scale(1.05);
+        }
+        
         #settings-btn {
             position: fixed;
             bottom: 20px;
             left: 20px;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
         }
+        
+        #settings-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
         #audio-selector {
             display: none;
             position: fixed;
-            bottom: 60px;
+            bottom: 70px;
             left: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 150; /* 高于其他元素 */
+            width: 280px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 123, 172, 0.4);
+        }
+        
+        #audio-selector h3 {
+            margin-top: 0;
+            color: #fa7298;
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        
+        .mode-selector {
+            margin-bottom: 20px;
+        }
+        
+        .mode-selector label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #fa7298;
+        }
+        
+        .mode-selector select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            font-size: 1rem;
+        }
+        
+        .audio-list {
+            margin-bottom: 20px;
+        }
+        
+        .audio-list label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #fa7298;
+        }
+        
+        .audio-list select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            font-size: 1rem;
+        }
+        
+        #set-audio {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        #set-audio:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 修改版权信息位置为居中 */
+        .credits {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            z-index: 90; /* 低于设置按钮 */
+            padding: 5px;
+            background: transparent;
+        }
+        
+        .credits a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .credits a:hover {
+            text-decoration: underline;
+        }
+        
+        .marquee-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .marquee-item {
+            position: absolute;
+            white-space: nowrap;
+            animation: marquee linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .text-bubble {
+            position: absolute;
+            z-index: 50; /* 低于设置面板 */
+            font-weight: bold;
+            pointer-events: none;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+            animation: floatUp 1.5s ease-out forwards;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-180px) scale(0.8);
+                opacity: 0;
+            }
+        }
+        
+        .mode-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .mode-indicator .mode-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .yuzu-mode .mode-icon {
+            background: var(--yuzu-color);
+        }
+        
+        .muq-mode .mode-icon {
+            background: var(--muq-color);
+        }
+        
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+            z-index: 0;
+            animation: floatBubble 15s infinite ease-in-out;
+        }
+        
+        @keyframes floatBubble {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            50% {
+                transform: translateY(-40px) translateX(0);
+            }
+            75% {
+                transform: translateY(-20px) translateX(-10px);
+            }
+        }
+        
+        .clickable-area {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 20; /* 低于设置面板但高于其他元素 */
+            pointer-events: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .center {
+                width: 90%;
+                margin: auto;
+                position: absolute;
+            }
+            
+            #audio-selector {
+                width: 80%;
+                left: 10%;
+                bottom: 80px;
+            }
+            
+            .mode-indicator {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            /* 移动端版权信息样式 */
+            .credits {
+                width: 90%;
+                left: 5%;
+                transform: none;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div>
-        <marquee behavior="scroll" direction="left" scrollamount="30"><font color="red" size="15px">Ciallo～(∠・ω< )⌒★ </font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="15"><font color="aqua" size="11px">0721</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="25"><font>请收下我的**！</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="12"><font color="coral" size="10px">杂鱼~❤ 杂鱼~❤</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="28"><font color="red"></font>狗修金ん~~</marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="20"><font color="greenyellow" size="13px">Ciallo～(∠・ω< )⌒☆</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="10"><font size="16px">Ciallo～(∠・ω< )⌒★</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="15"><font color="pink" size="20px">0721</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="11"><font color="aqua" size="6px">请收下我的**！</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="28"><font color="red">杂鱼~❤ 杂鱼~❤</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="8"><font color="greenyellow" size="10px">狗修金ん~~</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="20"><font color="pink" size="9px">Ciallo～(∠・ω< )⌒☆</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="13"><font color="green" size="5px">Ciallo～(∠・ω< )⌒☆</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="17"><font color="blue" size="5px">狗修金ん~~</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="16"><font color="yellow" size="7px">Ciallo～(∠・ω< )⌒★</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="11"><font color="red" size="5px">杂鱼~❤ 杂鱼~❤</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="10"><font color="orange" size="8px">Ciallo～(∠・ω< )⌒☆</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="20"><font color="gray" size="9px">Ciallo～(∠・ω< )⌒★</font></marquee>
-        <marquee behavior="scroll" direction="left" scrollamount="15"><font color="pink" size="20px">Pantsumeow~</font></marquee>
-    </div>
+    <div class="marquee-container" id="marquee-container"></div>
+    
+    <div class="clickable-area" id="clickable-area"></div>
+    
     <div id="main" class="center">
-        <img src="ciallo.gif">
+        <img src="ciallo.gif" alt="Ciallo~">
     </div>
-
-    <div id="settings-btn">设置</div>
+    
+<!--     <div class="mode-indicator yuzu-mode" id="mode-indicator">
+        <div class="mode-icon"></div>
+        <span id="mode-name">柚子模式</span>
+    </div> -->
+    
+    <div id="settings-btn">Config</div>
     <div id="audio-selector">
-        <label for="audio-files">选择音频:</label>
-        <select id="audio-files">
-            <option value="default">顺序播放</option>
-            <option value="ciallo.aac">Ciallo</option>
-            <option value="0721.aac">0721</option>
-            <option value="zhencao.aac">请收下我的**！</option>
-            <option value="zaku.aac">杂鱼~</option>
-            <option value="dogDevelopGolden.aac">狗修金~</option>
-        </select>
+        <h3>音频设置</h3>
+        
+        <div class="mode-selector">
+            <label for="mode-select">选择模式:</label>
+            <select id="mode-select">
+                <option value="yuzu">柚子模式</option>
+                <option value="muq">姆Q模式</option>
+            </select>
+        </div>
+        
+        <div class="audio-list">
+            <label for="play-mode">播放模式:</label>
+            <select id="play-mode">
+                <option value="sequence">顺序播放</option>
+                <option value="single">单曲播放</option>
+            </select>
+        </div>
+        
+        <div class="audio-list">
+            <label for="audio-files">选择音频:</label>
+            <select id="audio-files">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+        </div>
+        
         <button id="set-audio">确认选择</button>
     </div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-<script type="text/javascript">
-    let ac = new AudioContext();
-    let currentAudio = 'ciallo.aac'; // 默认音频
-    let audioQueue = []; // 音频队列
-    let audioIndex = 0; // 当前播放音频索引
-
-    window.onload = function() {
-        load_sound(currentAudio);
-        console.log("播放成功");
-    }
-
-    $(function () {
-        $("body").click(function(e) {
-            if ($('#audio-files').val() === 'default') {
-                if (audioQueue.length === 0) {
-                    audioQueue = ['ciallo.aac', '0721.aac', 'zhencao.aac', 'zaku.aac', 'dogDevelopGolden.aac']; // 默认音频队列
-                }
-                // 播放当前索引音频
-                load_sound(audioQueue[audioIndex]);
-                
-                const a = new Array("Ciallo～(∠・ω< )⌒★", "0721", "请收下我的（）（）！", "杂鱼~❤ 杂鱼~❤", "狗修金ん~~");
-                const a_idx = audioIndex; // 更新动画文本索引
-                const $i = $("<span/>").text(a[a_idx]);
-                const x = e.pageX,
-                    y = e.pageY;
-                $i.css({
-                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
-                    "top": y - 20,
-                    "left": x,
-                    "position": "absolute",
-                    "font-weight": "bold",
-                    "color": color16()
-                });
-                $("body").append($i);
-                $i.animate({
-                        "top": y - 180,
-                        "opacity": 0
-                    },
-                    1500,
-                    function() {
-                        $i.remove();
-                    });
-
-                audioIndex = (audioIndex + 1) % audioQueue.length; // 更新索引
-            } else {
-                load_sound(currentAudio);
-                const a = {
-                    "ciallo.aac": "Ciallo～(∠・ω< )⌒★",
-                    "0721.aac": "0721",
-                    "zhencao.aac": "请收下我的（）（）！",
-                    "zaku.aac": "杂鱼~❤ 杂鱼~❤",
-                    "dogDevelopGolden.aac": "狗修金ん~~"
-                }[currentAudio];
-                
-                const $i = $("<span/>").text(a);
-                const x = e.pageX,
-                    y = e.pageY;
-                $i.css({
-                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
-                    "top": y - 20,
-                    "left": x,
-                    "position": "absolute",
-                    "font-weight": "bold",
-                    "color": color16()
-                });
-                $("body").append($i);
-                $i.animate({
-                        "top": y - 180,
-                        "opacity": 0
-                    },
-                    1500,
-                    function() {
-                        $i.remove();
-                    });
+    
+    <div class="credits">
+        Copyright © 2024 - <span id="current-year"></span> 
+        <a href="https://blog.pantsu0721.top/" target="_blank">Pantsumeow</a>
+        <br>All Rights Reserved.
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        // 音频配置 - 便于扩展
+        const audioConfig = {
+            yuzu: {
+                name: "柚子模式",
+                audioList: [
+                    { id: "sound/01-ciallo.aac", name: "Ciallo～", text: "Ciallo～(∠・ω< )⌒★" },
+                    { id: "sound/02-0721.aac", name: "0721", text: "0721" },
+                    { id: "sound/03-zhencao.aac", name: "请收下我的**！", text: "请收下我的**！" },
+                    { id: "sound/04-zaku.aac", name: "雑魚~❤", text: "雑魚~❤" },
+                    { id: "sound/05-gosyujin.aac", name: "狗修金~", text: "狗修金ん~~" },
+                    { id: "sound/boyangyang.aac", name: "啵央央~", text: "啵央央~" }
+                ]
+            },
+            muq: {
+                name: "姆Q模式",
+                audioList: [
+                    { id: "sound/muq01担心.aac", name: "姆Q担心", text: "姆Q~" },
+                    { id: "sound/muq02失望.aac", name: "姆Q失望", text: "姆Q~" },
+                    { id: "sound/muq03疑问.aac", name: "姆Q疑问", text: "姆Q~" },
+                    { id: "sound/muq04凝视.aac", name: "姆Q凝视", text: "姆Q~" },
+                    { id: "sound/muq05惊讶.aac", name: "姆Q惊讶", text: "姆Q~" },
+                    { id: "sound/muq06害羞.aac", name: "姆Q害羞", text: "姆Q~" },
+                    { id: "sound/muq07龇牙.aac", name: "姆Q呲牙", text: "姆Q~" },
+                    { id: "sound/muq08愤怒.aac", name: "姆Q愤怒", text: "姆Q~" }
+                ]
             }
-        });
-
-
-        $('#settings-btn').click(function() {
-            $('#audio-selector').toggle();
-        });
-
-        $('#set-audio').click(function() {
-            currentAudio = $('#audio-files').val() === 'default' ? 'ciallo.aac' : $('#audio-files').val(); // 更新当前音频
-            audioQueue = [];
-            audioIndex = 0;
-            $('#audio-selector').hide();
-        });
-    });
-
-    function color16(){
-        const r = Math.floor(Math.random() * 256);
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
-        return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-    }
-
-    function load_sound(url_data) {
-        const req = new XMLHttpRequest();
-        req.open('GET', url_data, true);
-        req.responseType = 'arraybuffer';
-        req.onload = function() {
-            ac.decodeAudioData(req.response, function(buffer) {
-                const source = ac.createBufferSource();
-                source.buffer = buffer;
-                source.connect(ac.destination);
-                source.start(0);
-            }, function (e) {
-                console.info('错误');
+        };
+        
+        // 全局变量
+        let ac = new (window.AudioContext || window.webkitAudioContext)();
+        let currentMode = "yuzu";
+        let playMode = "sequence";
+        let audioQueue = [];
+        let audioIndex = 0;
+        let bubbles = [];
+        
+        // 初始化函数
+        function init() {
+            // 创建动态跑马灯
+            createMarqueeItems();
+            
+            // 创建背景气泡
+            createBubbles();
+            
+            // 初始化音频设置
+            updateAudioSelector();
+            
+            // 更新版权年份
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // 更新模式指示器
+            updateModeIndicator();
+        }
+        
+        // 创建跑马灯项目
+        function createMarqueeItems() {
+            const container = document.getElementById('marquee-container');
+            const marqueeData = [
+                { text: "Ciallo～(∠・ω< )⌒★", color: "red", size: 15, speed: 30 },
+                { text: "0721", color: "aqua", size: 11, speed: 15 },
+                { text: "请收下我的**！", color: "pink", size: 4, speed: 25 },
+                { text: "雑魚~❤ 雑魚~❤", color: "coral", size: 10, speed: 12 },
+                { text: "狗修金ん~~", color: "purple", size: 4, speed: 28 },
+                { text: "啵央央~", color: "greenyellow", size: 13, speed: 20 },
+                { text: "Ciallo～(∠・ω< )⌒★", color: "black", size: 16, speed: 10 },
+                { text: "0721", color: "pink", size: 20, speed: 15 },
+                { text: "请收下我的**！", color: "aqua", size: 6, speed: 11 },
+                { text: "雑魚~❤ 雑魚~❤", color: "red", size: 5, speed: 28 },
+                { text: " ", color: "greenyellow", size: 10, speed: 8 },
+                { text: "Ciallo～(∠・ω< )⌒★", color: "yellow", size: 7, speed: 16 },
+                { text: "狗修金ん~~", color: "greenyellow", size: 10, speed: 8 },
+                { text: "啵央央~", color: "pink", size: 9, speed: 20 },
+                { text: "狗修金ん~~", color: "blue", size: 5, speed: 17 },
+                { text: "雑魚~❤ 雑魚~❤", color: "red", size: 5, speed: 11 },
+                { text: "啵央央~", color: "orange", size: 8, speed: 10 },
+                { text: "Ciallo～(∠・ω< )⌒★", color: "purple", size: 9, speed: 20 },
+                { text: "Pantsumeow~", color: "pink", size: 20, speed: 15 }
+            ];
+            
+            marqueeData.forEach((item, index) => {
+                const el = document.createElement('div');
+                el.className = 'marquee-item';
+                el.innerHTML = `<font color="${item.color}" size="${item.size}px">${item.text}</font>`;
+                el.style.top = `${(index * 40) % window.innerHeight}px`;
+                el.style.animationDuration = `${100 / item.speed}s`;
+                container.appendChild(el);
             });
         }
-        req.send();
-    }
-</script>
-
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-        // 创建版权信息的 div 容器
-        const creditsDiv = document.createElement("div");
-        creditsDiv.className = "credits";
-        creditsDiv.style.position = "fixed";
-        creditsDiv.style.bottom = "5px";
-        creditsDiv.style.right = "5px";
-        creditsDiv.style.width = "100%";
-        creditsDiv.style.textAlign = "center";
-        creditsDiv.style.fontSize = "12px";
-        creditsDiv.style.color = "#666";
-
-
-        const currentYear = new Date().getFullYear();
-        creditsDiv.innerHTML = `Copyright © 2024 - ${currentYear} <a href="http://blog.pantsu0721.top/" target="_blank" style="color: inherit; text-decoration: none;">Pantsumeow</a></br>All Rights Reserved.`;
-
-        document.body.appendChild(creditsDiv);
-    });
-</script>
+        
+        // 创建背景气泡
+        function createBubbles() {
+            const container = document.body;
+            for (let i = 0; i < 15; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                
+                const size = Math.random() * 100 + 20;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                
+                bubble.style.opacity = Math.random() * 0.5 + 0.1;
+                bubble.style.animationDuration = `${Math.random() * 20 + 10}s`;
+                
+                container.appendChild(bubble);
+                bubbles.push(bubble);
+            }
+        }
+        
+        // 更新音频选择器
+        function updateAudioSelector() {
+            const audioFilesSelect = $('#audio-files');
+            audioFilesSelect.empty();
+            
+            // 添加默认选项
+            audioFilesSelect.append($('<option>', {
+                value: 'default',
+                text: playMode === 'sequence' ? '顺序播放' : '单曲播放'
+            }));
+            
+            // 添加当前模式下的音频文件
+            audioConfig[currentMode].audioList.forEach(audio => {
+                audioFilesSelect.append($('<option>', {
+                    value: audio.id,
+                    text: audio.name
+                }));
+            });
+        }
+        
+        // 更新模式指示器
+        function updateModeIndicator() {
+            $('#mode-name').text(audioConfig[currentMode].name);
+            $('#mode-indicator').attr('class', `mode-indicator ${currentMode}-mode`);
+        }
+        
+        // 播放音频
+        function playAudio(audioId) {
+            const audio = audioConfig[currentMode].audioList.find(a => a.id === audioId);
+            if (!audio) return;
+            
+            loadSound(audio.id);
+            return audio.text;
+        }
+        
+        // 加载声音
+        function loadSound(url) {
+            fetch(url)
+                .then(response => response.arrayBuffer())
+                .then(data => ac.decodeAudioData(data))
+                .then(buffer => {
+                    const source = ac.createBufferSource();
+                    source.buffer = buffer;
+                    source.connect(ac.destination);
+                    source.start(0);
+                })
+                .catch(e => console.error('音频加载错误:', e));
+        }
+        
+        // 创建文字气泡
+        function createTextBubble(text, x, y) {
+            const bubble = document.createElement('div');
+            bubble.className = 'text-bubble';
+            bubble.textContent = text;
+            bubble.style.color = color16();
+            bubble.style.left = `${x}px`;
+            bubble.style.top = `${y}px`;
+            bubble.style.fontSize = `${Math.random() * 10 + 16}px`;
+            
+            document.body.appendChild(bubble);
+            
+            // 动画结束后移除元素
+            setTimeout(() => {
+                bubble.remove();
+            }, 1500);
+        }
+        
+        // 生成随机颜色
+        function color16() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+        }
+        
+        // 页面加载完成后初始化
+        $(document).ready(function() {
+            init();
+            
+            // 页面点击事件
+            $('#clickable-area').click(function(e) {
+                let textToShow = "";
+                
+                if (playMode === "sequence") {
+                    // 顺序播放模式
+                    if (audioQueue.length === 0) {
+                        audioQueue = [...audioConfig[currentMode].audioList];
+                    }
+                    
+                    const currentAudio = audioQueue[audioIndex];
+                    textToShow = playAudio(currentAudio.id);
+                    
+                    audioIndex = (audioIndex + 1) % audioQueue.length;
+                } else {
+                    // 单曲播放模式
+                    const selectedAudio = $('#audio-files').val();
+                    if (selectedAudio !== 'default') {
+                        textToShow = playAudio(selectedAudio);
+                    }
+                }
+                
+                // 创建文字气泡
+                if (textToShow) {
+                    createTextBubble(textToShow, e.pageX, e.pageY);
+                }
+            });
+            
+            // 设置按钮点击事件
+            $('#settings-btn').click(function(e) {
+                e.stopPropagation();
+                $('#audio-selector').toggle();
+            });
+            
+            // 模式选择变更事件
+            $('#mode-select').change(function() {
+                currentMode = $(this).val();
+                audioQueue = [];
+                audioIndex = 0;
+                playMode = "sequence"; // 切换模式时重置为顺序播放
+                $('#play-mode').val('sequence');
+                updateAudioSelector();
+                updateModeIndicator();
+            });
+            
+            // 播放模式变更事件
+            $('#play-mode').change(function() {
+                playMode = $(this).val();
+                updateAudioSelector();
+            });
+            
+            // 音频选择变更事件 - 修复播放模式切换逻辑
+            $('#audio-files').change(function() {
+                const selectedValue = $(this).val();
+                
+                // 如果用户选择了具体音频（非默认选项）
+                if (selectedValue !== 'default') {
+                    // 自动切换到单曲播放模式
+                    playMode = "single";
+                    $('#play-mode').val('single');
+                }
+            });
+            
+            // 确认选择按钮
+            $('#set-audio').click(function(e) {
+                e.stopPropagation();
+                $('#audio-selector').hide();
+            });
+        });
+    </script>
+</body>
 </html>
-
