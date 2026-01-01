@@ -3,9 +3,19 @@
   <channel>
     <title>Tags on Pantsu‘s BLOG</title>
     <link>https://blog.pantsu0721.top/ja/tags/</link>
-    <description>Recent content in Tags on Pantsu‘s BLOG</description>
+    <description>Recent content from Pantsu‘s BLOG</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="https://blog.pantsu0721.top/ja/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <managingEditor>xxx@example.com (一条胖次)</managingEditor>
+    <webMaster>xxx@example.com (一条胖次)</webMaster>
+    
+    <copyright>本ブログのすべての文書は、特に指定されていない限り、BY-NC-SAライセンスに従っています。引用の際は出典を明記してください！</copyright>
+    
+    
+    <atom:link href="https://blog.pantsu0721.top/ja/tags/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
   </channel>
 </rss>

@@ -3,9 +3,19 @@
   <channel>
     <title>Tags on Pantsu‘s BLOG</title>
     <link>https://blog.pantsu0721.top/zh-tw/tags/</link>
-    <description>Recent content in Tags on Pantsu‘s BLOG</description>
+    <description>Recent content from Pantsu‘s BLOG</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <atom:link href="https://blog.pantsu0721.top/zh-tw/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <managingEditor>xxx@example.com (一条胖次)</managingEditor>
+    <webMaster>xxx@example.com (一条胖次)</webMaster>
+    
+    <copyright>本部落格所有文章除特別聲明外，均採用 BY-NC-SA 授權協議。轉載請註明出處！</copyright>
+    
+    
+    <atom:link href="https://blog.pantsu0721.top/zh-tw/tags/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
   </channel>
 </rss>

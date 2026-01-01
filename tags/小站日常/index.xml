@@ -3,24 +3,66 @@
   <channel>
     <title>小站日常 on Pantsu‘s BLOG</title>
     <link>https://blog.pantsu0721.top/tags/%E5%B0%8F%E7%AB%99%E6%97%A5%E5%B8%B8/</link>
-    <description>Recent content in 小站日常 on Pantsu‘s BLOG</description>
+    <description>Recent content from Pantsu‘s BLOG</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
+    
+    <managingEditor>xxx@example.com (一条胖次)</managingEditor>
+    <webMaster>xxx@example.com (一条胖次)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
     <lastBuildDate>Sun, 19 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.pantsu0721.top/tags/%E5%B0%8F%E7%AB%99%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <atom:link href="https://blog.pantsu0721.top/tags/%E5%B0%8F%E7%AB%99%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
     <item>
       <title>Pantsu0721.top一周岁生日快乐！！</title>
       <link>https://blog.pantsu0721.top/post/2025/2025-10-19-pantsu0721.top%E4%B8%80%E5%91%A8%E5%B2%81%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90/</link>
-      <pubDate>Sun, 19 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 19 Oct 2025 00:00:00 &#43;0000</pubDate>
+      <author>xxx@example.com (一条胖次)</author>
       <guid>https://blog.pantsu0721.top/post/2025/2025-10-19-pantsu0721.top%E4%B8%80%E5%91%A8%E5%B2%81%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90/</guid>
-      <description>&lt;h3 id=&#34;致读者&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%87%b4%e8%af%bb%e8%80%85&#34;&gt;&lt;/a&gt;&#xA;致读者&#xA;&lt;/h3&gt;&lt;p&gt;致读者&lt;/p&gt;&#xA;&lt;p&gt;我是Pantsumeow，一只有梦想的猫。&lt;/p&gt;&#xA;&lt;p&gt;当我写下这篇文章时，后台那个长长的时间戳定格在1760803200。今天，小站就整整一岁了。&lt;/p&gt;</description>
+      <description>
+        <![CDATA[<h1>Pantsu0721.top一周岁生日快乐！！</h1><p>作者：一条胖次（xxx@example.com）</p>
+        
+          <h3 id="致读者">
+<a class="header-anchor" href="#%e8%87%b4%e8%af%bb%e8%80%85"></a>
+致读者
+</h3><p>致读者</p>
+<p>我是Pantsumeow，一只有梦想的猫。</p>
+<p>当我写下这篇文章时，后台那个长长的时间戳定格在1760803200。今天，小站就整整一岁了。</p>
+        
+        <hr><p>本文2025-10-19首发于<a href='https://blog.pantsu0721.top/'>Pantsu‘s BLOG</a>，最后修改于2025-10-19</p>]]>
+      </description>
+      
+        <category>文章</category>
+      
     </item>
+    
+    
+
     <item>
       <title>建站！！</title>
       <link>https://blog.pantsu0721.top/post/2024/2024-10-19-%E5%BB%BA%E7%AB%99/</link>
-      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 &#43;0000</pubDate>
+      <author>xxx@example.com (一条胖次)</author>
       <guid>https://blog.pantsu0721.top/post/2024/2024-10-19-%E5%BB%BA%E7%AB%99/</guid>
-      <description>&lt;p&gt;2024年10月19日，小站正式发布！！（ ゜- ゜）つロ乾杯~&lt;/p&gt;</description>
+      <description>
+        <![CDATA[<h1>建站！！</h1><p>作者：一条胖次（xxx@example.com）</p>
+        
+          <p>2024年10月19日，小站正式发布！！（ ゜- ゜）つロ乾杯~</p>
+        
+        <hr><p>本文2024-10-19首发于<a href='https://blog.pantsu0721.top/'>Pantsu‘s BLOG</a>，最后修改于2024-10-19</p>]]>
+      </description>
+      
+        <category>随笔</category>
+      
     </item>
+    
   </channel>
 </rss>
