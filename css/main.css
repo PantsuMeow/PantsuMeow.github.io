@@ -312,6 +312,10 @@ body [data-aos="zoom-in"] {
   content: "\e623";
 }
 
+.icon-zaboutme:before {
+  content: "\1f340";
+}
+
 .icon-zciallo:before {
   content: "\1f34a";
 }
@@ -2909,6 +2913,10 @@ a, .main-nav-icon, .popup-btn-close {
 
 .icon-telegram {
   color: #0088cc;
+}
+
+.icon-zaboutme {
+  color: #000000;
 }
 
 .icon-zciallo {
